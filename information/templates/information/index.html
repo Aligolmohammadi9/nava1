@@ -1,0 +1,44 @@
+{% extends 'information/layout.html' %}
+
+{% block body %}
+<div >
+  <div >
+      <div class="form-label form-control form-group " style="width: 700px;margin:auto;">
+        <form method="post" >
+            {% csrf_token %}
+            {{ form.as_p }}
+            
+            
+            
+            <button style="margin:10px;" type="submit" class="btn btn-primary">Submit</button>
+          </form>
+      </div>
+  </div>
+</div>  
+
+
+          
+          <script>
+            document.getElementById("id_taking_medication").onclick = function check(){
+                if(document.getElementById("id_taking_medication").checked){
+                  document.getElementById("id_list_of_medication").disabled = false;
+              }
+                else{
+                  document.getElementById("id_list_of_medication").disabled = true;
+                }
+                
+            }
+
+            
+              
+
+            
+          </script>
+          
+          
+
+          
+        
+
+{% endblock body %}
+
